@@ -1,0 +1,20 @@
+@keyframes cloud {
+    0%{
+       background-position: 0 0;
+    }
+    100% {
+       background-position: 3000px 0;
+   }
+ }
+
+ @keyframes island {
+    0%{
+        top: 59%;
+    }
+    50% {
+        top: 60%;
+    }
+    100% {
+        top: 61%;
+   }
+ }

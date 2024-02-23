@@ -1,0 +1,164 @@
+@charset "UTF-8";
+body, html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+#main div .bg-cloud {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/그레인구름.jpg") 0 center/120% repeat-x;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: cloud 100s linear infinite alternate-reverse;
+  z-index: 1;
+}
+#main div .bg-island {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 124rem;
+  height: 100%;
+  z-index: 5;
+  transition: 0.2s;
+  animation: island 2s linear infinite alternate;
+}
+#main div .bg-island span {
+  display: inline-block;
+}
+#main div .bg-island .island-base {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  transform: translate(-50%, -50%);
+  width: 60rem;
+  height: 28rem;
+  background: url("../img/8비트-함체.png") center center no-repeat;
+  background-size: cover;
+}
+#main .title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 124rem;
+  height: 100%;
+  z-index: 6;
+}
+#main .title span {
+  display: inline-block;
+  width: 40%;
+  height: 10rem;
+}
+#main .title .title-1 {
+  position: absolute;
+  left: 35%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  background: url("../img/8비트-이름_03.png") center center no-repeat;
+  background-size: contain;
+}
+#main .title .title-2 {
+  position: absolute;
+  left: 68%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  background: url("../img/8비트-제목_03.png") center center no-repeat;
+  background-size: contain;
+}
+
+/* wrap */
+#wrap {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+#wrap header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 15rem;
+  height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background: url("../img/헤더헤더2.jpg") 0 center no-repeat;
+  overflow: hidden;
+}
+#wrap header nav ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 85vh;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+  z-index: 2;
+}
+#wrap header nav ul li {
+  width: 100%;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+#wrap header nav ul li:hover p {
+  color: pink;
+}
+#wrap header nav ul li a {
+  display: block;
+  transition: all 0.3s ease-in;
+}
+#wrap header nav ul li a img {
+  display: block;
+  width: 8rem;
+  margin: 0 auto;
+}
+#wrap header nav ul li a p {
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  transition: all 0.2s ease-in;
+}
+#wrap header nav h3 {
+  padding: 2rem 0;
+  box-sizing: border-box;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+#container {
+  width: calc(100% - 15rem);
+  overflow-x: hidden;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#container section {
+  width: 100%;
+  height: 100vh;
+}
+
+footer {
+  height: 100vh;
+  background-color: #e2edff;
+}/*# sourceMappingURL=main.css.map */

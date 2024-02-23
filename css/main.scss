@@ -1,0 +1,191 @@
+// FONT family: Galmuri14, sans-serif;
+
+// mixin
+@mixin dsp-flex {
+    display: flex;
+    justify-content: space-between;
+ }
+ @mixin position-ab($left : 50% ,$top : 50%) {
+    position: absolute;
+    left : $left;
+    top : $top;
+    transform: translate(-50%,-50%);
+ }
+ 
+ // 변수
+ $white-color : #fff;
+ $main-color : #e2edff;
+ $sub-color : #466da7;
+ 
+ body,html {
+    scroll-behavior: smooth;
+ }
+ body {
+    overflow-x: hidden;
+ }
+ 
+ #main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+ 
+    div {
+       .bg-cloud {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: inline-block;
+          width: 100vw;
+          height: 100vh;
+          background: url('../img/그레인구름.jpg')0 center / 120% repeat-x;
+          background: {
+             size: cover;
+             attachment: fixed;
+          };
+          animation: cloud 100s linear infinite alternate-reverse;
+          z-index: 1;
+       }
+       .bg-island {
+          @include position-ab($top : 60%);
+          display: inline-block;
+          width: 124rem;
+          height: 100%;
+          z-index: 5;
+          transition: .2s;
+          animation: island 2s linear infinite alternate;
+ 
+          span {
+             display: inline-block;
+          }
+          .island-base {
+             @include position-ab($top : 62%);
+             width: 60rem;
+             height: 28rem;
+             background: url('../img/8비트-함체.png')center center no-repeat;
+             background-size: cover;
+          }
+       }
+    }
+    .title {
+       @include position-ab;
+       width: 124rem;
+       height: 100%;
+       z-index: 6;
+ 
+       span {
+          display: inline-block;
+          width: 40%;
+          height: 10rem;
+ 
+       }
+ 
+       .title-1 {
+          @include position-ab($left : 35% ,$top : 20%);
+          background: url('../img/8비트-이름_03.png')center center no-repeat;
+          background-size: contain;
+       }
+       .title-2 {
+          @include position-ab($left : 68% ,$top : 35%);
+          background: url('../img/8비트-제목_03.png')center center no-repeat;
+          background-size: contain;
+       }
+    }
+ }
+ /* wrap */
+ #wrap {
+    @include dsp-flex;
+    position: relative;
+    
+    // aside
+    header {
+       position: sticky;
+       left: 0;
+       top: 0;
+       width: 15rem;
+       height: 100vh;
+       padding: 1.5rem;
+       box-sizing: border-box;
+       background:url('../img/헤더헤더2.jpg')0 center no-repeat;
+       overflow: hidden;
+ 
+       nav {
+          ul {
+             display: flex;
+             flex-flow: column nowrap;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+             height: 85vh;
+             padding: 1.5rem 0;
+             box-sizing: border-box;
+             z-index: 2;
+ 
+             li{   
+                   width: 100%;
+                   padding: 1rem 0;
+                   cursor: pointer;
+                   transition: all .2s ease-in;
+                   
+                   &:hover {
+                      p {
+                         color: pink;
+                      }
+                   }
+                a{
+                   display: block;
+                   transition: all .3s ease-in;
+                   img{
+                      display: block;
+                      width: 8rem;
+                      margin: 0 auto;
+                   }
+                   p{
+                      margin: .5rem 0 0 0;
+                      text : {
+                         align : center;
+                         transform: uppercase;
+                      }
+                      font: {
+                         size : 1.6rem;
+                         weight : 900;
+                      }
+                      color: $white-color;
+                      transition: all .2s ease-in;
+                   }
+                }
+             }
+          }
+          h3 {
+             padding: 2rem 0;
+             box-sizing: border-box;
+             font-size: 2rem;
+             text-align: center; 
+             color: $white-color;
+          }
+       }
+    }
+ }
+ 
+  // container 
+  #container {
+    width: calc(100% - 15rem);
+    overflow-x: hidden;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+ 
+    // section
+    section {
+       width: 100%;
+       height: 100vh;
+    }
+ }  
+ 
+ 
+ // footer
+ footer {
+    height: 100vh;
+    background-color: $main-color;
+ }
