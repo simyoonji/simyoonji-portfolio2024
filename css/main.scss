@@ -18,12 +18,25 @@
  $sub-color : #466da7;
  
  body,html {
-    scroll-behavior: smooth;
+   scroll-behavior: smooth;
  }
  body {
     overflow-x: hidden;
  }
- 
+// mouse
+ #mouse {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+   width:35px; 
+   height:35px; 
+   background-color: rgb(255, 160, 58);
+   transform: translate(-50%, -50%);
+   pointer-events: none;
+   mix-blend-mode: difference;
+   z-index: 9999;
+}
+
  #main {
     position: relative;
     width: 100%;
@@ -48,23 +61,34 @@
           z-index: 1;
        }
        .bg-island {
-          @include position-ab($top : 60%);
-          display: inline-block;
+         @include position-ab();
           width: 124rem;
           height: 100%;
           z-index: 5;
           transition: .2s;
-          animation: island 2s linear infinite alternate;
- 
+
+          div {
+            display: inline-block;
+            animation: island 1s linear infinite alternate;
+          }
           span {
              display: inline-block;
           }
           .island-base {
-             @include position-ab($top : 62%);
+             @include position-ab($top : 74%);
              width: 60rem;
              height: 28rem;
-             background: url('../img/8비트-함체.png')center center no-repeat;
+             background: url('../img//땅_03.png')center center no-repeat;
              background-size: cover;
+             animation: island 2s linear infinite alternate;
+          }
+          .island-sim {
+            @include position-ab($top : 53%);
+            width: 6rem;
+            height: 9rem;
+            background: url('../img/픽셀-sim2.gif')center center no-repeat;
+            background-size: cover;
+            animation: sim 2s linear infinite alternate;
           }
        }
     }
@@ -80,17 +104,32 @@
           height: 10rem;
  
        }
- 
        .title-1 {
           @include position-ab($left : 35% ,$top : 20%);
           background: url('../img/8비트-이름_03.png')center center no-repeat;
           background-size: contain;
+
+          &::before {
+            content: '';
+            background: url('../img/');
+          }
        }
        .title-2 {
           @include position-ab($left : 68% ,$top : 35%);
           background: url('../img/8비트-제목_03.png')center center no-repeat;
           background-size: contain;
        }
+    }
+    p {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      font : {
+         size: 1.6rem;
+         weight: 600;
+      }
+      color: $white-color;
+      z-index: 6;
     }
  }
  /* wrap */
@@ -136,10 +175,12 @@
                 a{
                    display: block;
                    transition: all .3s ease-in;
+                   
                    img{
                       display: block;
-                      width: 8rem;
+                      width: 5rem;
                       margin: 0 auto;
+                      border: 1px solid red;
                    }
                    p{
                       margin: .5rem 0 0 0;
@@ -161,10 +202,18 @@
              padding: 2rem 0;
              box-sizing: border-box;
              font-size: 2rem;
-             text-align: center; 
-             color: $white-color;
+             text : {
+               align: center;
+               transform: uppercase;
+             }
+             background-color: rgba(255,255,255, 0.2);
+             backdrop-filter: blur(2px);
+             border-radius: 2rem;
           }
        }
+    }
+    .active {
+      color: blue;
     }
  }
  

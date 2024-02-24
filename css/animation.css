@@ -9,12 +9,18 @@
 
  @keyframes island {
     0%{
-        top: 59%;
-    }
-    50% {
-        top: 60%;
+        top: 74%;
     }
     100% {
-        top: 61%;
+        top: 76%;
+   }
+ }
+ 
+ @keyframes sim {
+    0%{
+        top: 53%;
+    }
+    100% {
+        top: 55%;
    }
  }
