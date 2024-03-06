@@ -18,22 +18,26 @@
  
  body,html {
    scroll-behavior: smooth;
+   cursor: none;
  }
  body {
     overflow-x: hidden;
  }
 // mouse
- #mouse {
+ .mouse {
    position: fixed;
-   width:30px; 
-   height:30px; 
-   background-color: pink;
-   border-radius: 50%;
+   left: 50%;
+   top: 50%;
+   width: 30px;
+   height: 30px;
+   background-image: url(../img/mouse-1.png);
+   background-repeat: no-repeat;
+   background-size: contain;
+   transform: translate(-50%,-50%);
    pointer-events: none;
    z-index: 9999;
-   transform: translate(-50%,-50%);
 }
-
+// main
  #main {
     position: relative;
     width: 100%;
@@ -159,25 +163,19 @@
              z-index: 2;
  
              li{   
-                   width: 100%;
-                   padding: 1rem 0;
-                   cursor: pointer;
-                   transition: all .2s ease-in;
+                  width: 100%;
+                  padding: 1rem 0;
+                  transition: all .2s ease-in;
                    
-                   &:hover {
-                      p {
-                         color: pink;
-                      }
-                   }
                 a{
                    display: block;
-                   transition: all .3s ease-in;
+                   cursor: none;
                    
                    img{
                       display: block;
                       width: 5rem;
                       margin: 0 auto;
-                      border: 1px solid red;
+                      transition: transform .1s ease-in-out;
                    }
                    p{
                       margin: .5rem 0 0 0;

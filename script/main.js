@@ -1,12 +1,42 @@
 //마우스
-const mouse = document.querySelector('#mouse')
+const mouse = document.querySelector('.mouse')
+const menuList = document.querySelectorAll('.page');
+const menuListA = document.querySelectorAll('.page > a');
 
-window.addEventListener('mousemove',(e) => {
-    mouse.style.left = `${e.clientX}px` 
-    mouse.style.top = `${e.clientY}px` 
+// 마우스 변경
+window.addEventListener('mousemove',(event) => {
+    mouse.style.left = `${event.clientX}px` 
+    mouse.style.top = `${event.clientY}px` 
 });
 
-// section scroll event
+// 마우스 이미지 변경
+menuList.forEach((item) => {
+    item.addEventListener('mouseover', () => {
+        changeMouseImage('url("../img/mouse-2.png")');
+    });
+    item.addEventListener('mouseout', () => {
+        changeMouseImage('url("../img/mouse-1.png")');
+    });
+});
+let changeMouseImage = (MouseUrl) => {
+    mouse.style.backgroundImage = MouseUrl;
+};
+
+// 메뉴이미지 크기 변경
+menuList.forEach((menu) => {
+    let targetImg = '';
+
+    menu.addEventListener('mouseover', (event) => {
+        targetImg = event.currentTarget.querySelector('img');
+        targetImg.style.transform = "scale(1.1)";
+    });
+    menu.addEventListener('mouseout', (event) => {
+        targetImg = event.currentTarget.querySelector('img');
+        targetImg.style.transform = "scale(1)";
+    });
+});
+
+// 섹션 이동하면 헤더의 글씨 변경
 let sectionAll = document.querySelectorAll('section');
 let headerTextChange = document.querySelector('.header-text-change');
 
@@ -15,18 +45,13 @@ window.addEventListener('scroll', () => {
 
     sectionAll.forEach((e) => {
         let sectionTop = e.offsetTop;
-        let sectionHeight = e.offsetHeight; // 섹션의 높이를 가져옵니다.
+        let sectionHeight = e.offsetHeight;
         let sectionDataName = e.getAttribute('data-name');
-
-        // 각 섹션의 상단과 하단을 계산하여 스크롤 범위를 지정합니다.
         let sectionBottom = sectionTop + sectionHeight;
 
-        // 현재 스크롤 위치가 해당 섹션의 범위 내에 있으면 헤더 텍스트 변경
         if (userScrollY > sectionTop && userScrollY < sectionBottom) {
             headerTextChange.innerHTML = sectionDataName;
         }
-
-        // 스크롤이 섹션을 완전히 지나갈 때까지 헤더 텍스트 유지
         if (userScrollY >= sectionBottom) {
             headerTextChange.innerHTML = sectionDataName;
         }

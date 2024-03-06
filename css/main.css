@@ -1,21 +1,25 @@
 @charset "UTF-8";
 body, html {
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
   overflow-x: hidden;
 }
 
-#mouse {
+.mouse {
   position: fixed;
+  left: 50%;
+  top: 50%;
   width: 30px;
   height: 30px;
-  background-color: pink;
-  border-radius: 50%;
+  background-image: url(../img/mouse-1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
 }
 
 #main {
@@ -152,21 +156,17 @@ body {
 #wrap header nav ul li {
   width: 100%;
   padding: 1rem 0;
-  cursor: pointer;
   transition: all 0.2s ease-in;
-}
-#wrap header nav ul li:hover p {
-  color: pink;
 }
 #wrap header nav ul li a {
   display: block;
-  transition: all 0.3s ease-in;
+  cursor: none;
 }
 #wrap header nav ul li a img {
   display: block;
   width: 5rem;
   margin: 0 auto;
-  border: 1px solid red;
+  transition: transform 0.1s ease-in-out;
 }
 #wrap header nav ul li a p {
   margin: 0.5rem 0 0 0;
