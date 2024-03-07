@@ -1,11 +1,15 @@
 @charset "UTF-8";
 body, html {
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
   overflow-x: hidden;
+  cursor: none;
+}
+
+a, button {
+  cursor: none;
 }
 
 .mouse {
@@ -161,7 +165,6 @@ body {
 }
 #wrap header nav ul li a {
   display: block;
-  cursor: none;
 }
 #wrap header nav ul li a img {
   display: block;

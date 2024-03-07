@@ -11,29 +11,29 @@ window.addEventListener('mousemove',(event) => {
     mouse.style.top = `${event.clientY}px` 
 });
 
-// 마우스이벤트 -> 마우스 이미지 변경
 menuList.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage('url("../img/mouse-2.png")');
+        changeMouseImage(`url(../img/mouse-2.png)`);
     });
     item.addEventListener('mouseout', () => {
-        changeMouseImage('url("../img/mouse-1.png")');
+        changeMouseImage(`url(../img/mouse-1.png)`);
     });
 });
+
 buttonAll.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage('url("../img/mouse-2.png")');
+        changeMouseImage(`url(../img/mouse-2.png)`);
     });
     item.addEventListener('mouseout', () => {
-        changeMouseImage('url("../img/mouse-1.png")');
+        changeMouseImage(`url(../img/mouse-1.png)`);
     });
 });
 
 skillsOpen.addEventListener('mouseover', () => {
-    changeMouseImage('url("../img/mouse-2.png")');
+    changeMouseImage(`url(../img/mouse-2.png)`);
 });
 skillsOpen.addEventListener('mouseout', () => {
-    changeMouseImage('url("../img/mouse-1.png")');
+    changeMouseImage(`url(../img/mouse-1.png)`);
 });
 
 let changeMouseImage = (MouseUrl) => {

@@ -20,11 +20,13 @@
  
  body,html {
    scroll-behavior: smooth;
-   // 기본 커서 none
-   cursor: none;
  }
  body {
     overflow-x: hidden;
+    cursor: none;
+ }
+ a,button {
+   cursor: none;
  }
 // mouse
  .mouse {
@@ -173,7 +175,6 @@
                    
                 a{
                    display: block;
-                   cursor: none;
                    
                    img{
                       display: block;
