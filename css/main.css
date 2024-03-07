@@ -192,9 +192,6 @@ a, button {
           backdrop-filter: blur(2px);
   border-radius: 2rem;
 }
-#wrap .active {
-  color: blue;
-}
 
 #container {
   width: calc(100% - 15rem);
@@ -235,9 +232,6 @@ a, button {
   transform: translate(-50%, -50%);
   border-radius: 20px;
   z-index: 2;
-  background-color: #fff;
-  padding: 0 0 3rem 0;
-  box-sizing: border-box;
   background-color: #e2edff;
 }
 #container #about .about-skills div:nth-of-type(1) {
@@ -272,7 +266,6 @@ a, button {
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -281,45 +274,18 @@ a, button {
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
-  border: 1px solid red;
+}
+#container #about .about-skills .skills-inner ul li {
+  margin: 0 0 1rem 0;
 }
 #container #about .about-skills .skills-inner ul li span {
   display: block;
   width: 5rem;
   height: 5rem;
-  border: 1px solid red;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(1) {
-  background: url(../img/icon_html.png) center center no-repeat;
-  background-size: contain;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(2) {
-  background: url(../img/icon_css3.png) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(3) {
-  background: url(../img/scss.svg) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(4) {
-  background: url(../img/Photoshop.png) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(5) {
-  background: url(../img/Illustrator.png) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(6) {
-  background: url(../img/Js.png) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(7) {
-  background: url(../img/figma.png) center center no-repeat;
-  background-size: cover;
-}
-#container #about .about-skills .skills-inner ul li:nth-of-type(8) {
-  background: url(../img/github.svg) center center no-repeat;
-  background-size: cover;
+#container #about .about-skills .skills-inner ul li span img {
+  width: 5rem;
+  height: 5rem;
 }
 #container #about .about-skills .skills-inner dl {
   display: flex;
@@ -328,7 +294,7 @@ a, button {
 }
 #container #about .about-skills .skills-inner dl dt {
   width: 25rem;
-  height: 34rem;
+  height: 35rem;
   background: url(../img/이모지-.gif) center center no-repeat;
   background-size: cover;
   border-radius: 20px;

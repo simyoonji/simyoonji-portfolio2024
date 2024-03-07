@@ -52,6 +52,11 @@ menuList.forEach((menu) => {
         targetImg = event.currentTarget.querySelector('img');
         targetImg.style.transform = "scale(1)";
     });
+    menu.addEventListener('click', () => {
+        modalBg.style.display = 'none';
+        skillsBox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
 });
 
 // 스크롤 이벤트 -> 헤더의 글씨 변화

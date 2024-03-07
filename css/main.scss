@@ -212,9 +212,6 @@
           }
        }
     }
-    .active {
-      color: blue;
-    }
  }
 
   // container 
@@ -256,9 +253,6 @@
          transform: translate(-50%,-50%);
          border-radius: 20px;
          z-index: 2;
-         background-color: $white-color;
-         padding: 0 0 3rem 0;
-         box-sizing: border-box;
          background-color: $main-color;
          
          div:nth-of-type(1) {
@@ -276,8 +270,6 @@
                transform: translateY(-50%);
                width: 8.3rem;
                height: 2rem;
-               // background-color: rgb(124, 133, 255);
-               // background-color: rgb(255, 124, 124);
                background-color: $sub-color-pink;
                border-radius: 1rem;
                z-index: 1;
@@ -300,7 +292,6 @@
             position: relative;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 2rem;
             box-sizing: border-box;
 
@@ -310,9 +301,9 @@
                flex-direction: column;
                align-items: center;
                flex-wrap: nowrap;
-               border: 1px solid red;
 
                li {
+                  margin: 0 0 1rem 0;
 
                   h4 {
 
@@ -321,39 +312,12 @@
                      display: block;
                      width: 5rem;
                      height: 5rem;
-                     border: 1px solid red;
-                  }
-                  &:nth-of-type(1) {
-                     background: url(../img/icon_html.png)center center no-repeat;
-                     background-size: contain;
-                  }
-                  &:nth-of-type(2) {
-                     background: url(../img/icon_css3.png)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(3) {
-                     background: url(../img/scss.svg)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(4) {
-                     background: url(../img/Photoshop.png)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(5) {
-                     background: url(../img/Illustrator.png)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(6) {
-                     background: url(../img/Js.png)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(7) {
-                     background: url(../img/figma.png)center center no-repeat;
-                     background-size: cover;
-                  }
-                  &:nth-of-type(8) {
-                     background: url(../img/github.svg)center center no-repeat;
-                     background-size: cover;
+
+                     img {
+                        width: 5rem;
+                        height: 5rem;
+                        
+                     }
                   }
                }
             }
@@ -365,7 +329,7 @@
 
                dt{
                   width: 25rem;
-                  height: 34rem;
+                  height: 35rem;
                   background: url(../img/이모지-.gif)center center no-repeat;
                   background-size: cover;
                   border-radius: 20px;
