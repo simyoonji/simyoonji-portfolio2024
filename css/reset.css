@@ -9,7 +9,6 @@ h1, h2, h3, h4, h5, h6, p, figure, dl, dt, dd {
 	border: 0;
 	vertical-align: baseline;
 }
-
 article, aside {
 	display: block;
 }
@@ -21,10 +20,16 @@ ol, ul {
 }
 a{text-decoration: none;
 	color: inherit;
+    cursor: none;
 }
 button,select {
     outline: none;
     border: none;
+    background-color: transparent;
+    cursor: none;
+}
+span {
+    display: inline-block;
 }
 .hide {
 	line-height: 0;

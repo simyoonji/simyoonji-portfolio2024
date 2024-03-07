@@ -15,9 +15,12 @@
  $white-color : #fff;
  $main-color : #e2edff;
  $sub-color : #466da7;
+ $sub-color2 : rgb(124, 133, 255);
+ $sub-color-pink : rgb(254, 137, 164);
  
  body,html {
    scroll-behavior: smooth;
+   // 기본 커서 none
    cursor: none;
  }
  body {
@@ -148,6 +151,7 @@
        padding: 1.5rem;
        box-sizing: border-box;
        background:url('../img/헤더헤더2.jpg')0 center no-repeat;
+       background-size: cover;
        overflow: hidden;
  
        nav {
@@ -211,7 +215,7 @@
       color: blue;
     }
  }
- 
+
   // container 
   #container {
     width: calc(100% - 15rem);
@@ -225,8 +229,195 @@
        width: 100%;
        height: 100vh;
     }
+    #about {
+      position: relative;
+      z-index: 0;
+
+      .about-modal-bg {
+         display: none;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100vh;
+         background-color: rgba(0,0,0,0.4);
+         z-index: 1;
+      }
+      .skillsOpen {
+         padding: 1rem;
+         background-color: pink;
+      }
+
+      .about-skills{
+         display: none;
+         @include position-ab;
+         width: 80rem;
+         transform: translate(-50%,-50%);
+         border-radius: 20px;
+         z-index: 2;
+         background-color: $white-color;
+         padding: 0 0 3rem 0;
+         box-sizing: border-box;
+         background-color: $main-color;
+         
+         div:nth-of-type(1) {
+            position: relative;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: $sub-color;
+
+            &::after {
+               content: '';
+               display: inline-block;
+               position: absolute;
+               left: 1rem;
+               top: 50%;
+               transform: translateY(-50%);
+               width: 8.3rem;
+               height: 2rem;
+               // background-color: rgb(124, 133, 255);
+               // background-color: rgb(255, 124, 124);
+               background-color: $sub-color-pink;
+               border-radius: 1rem;
+               z-index: 1;
+            }
+
+            span {
+               position: relative;
+               padding: 1rem 2rem;
+               box-sizing: border-box;
+               font : {
+                  size: 20px;
+                  style: italic;
+               }
+               color: $white-color ;  
+               z-index: 2;
+            }
+         }
+         
+         .skills-inner{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+
+            // skills list
+            ul {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               flex-wrap: nowrap;
+               border: 1px solid red;
+
+               li {
+
+                  h4 {
+
+                  }
+                  span {
+                     display: block;
+                     width: 5rem;
+                     height: 5rem;
+                     border: 1px solid red;
+                  }
+                  &:nth-of-type(1) {
+                     background: url(../img/icon_html.png)center center no-repeat;
+                     background-size: contain;
+                  }
+                  &:nth-of-type(2) {
+                     background: url(../img/icon_css3.png)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(3) {
+                     background: url(../img/scss.svg)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(4) {
+                     background: url(../img/Photoshop.png)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(5) {
+                     background: url(../img/Illustrator.png)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(6) {
+                     background: url(../img/Js.png)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(7) {
+                     background: url(../img/figma.png)center center no-repeat;
+                     background-size: cover;
+                  }
+                  &:nth-of-type(8) {
+                     background: url(../img/github.svg)center center no-repeat;
+                     background-size: cover;
+                  }
+               }
+            }
+
+            dl {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+
+               dt{
+                  width: 25rem;
+                  height: 34rem;
+                  background: url(../img/이모지-.gif)center center no-repeat;
+                  background-size: cover;
+                  border-radius: 20px;
+
+                  img {
+                     height: 100%;
+                     object-fit: cover;
+                  }
+               }
+               dd {
+                  width: 100%;
+                  padding: .5rem 0;
+                  margin: .5rem 0 0 0;
+                  box-sizing: border-box;
+                  border: 1px solid red;
+               }
+            }
+         }
+
+         .skillsClose {
+            display: block;
+            position: absolute;
+            right: .5rem;
+            bottom: .5rem;
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+            color: $sub-color;
+            font-size: 15px;
+            font-style: italic;
+
+            &:hover {
+               color: $sub-color-pink;
+            }
+
+            &:hover::after {
+               width: 80%;
+            }
+
+            &::after {
+               content: '';
+               display: inline-block;
+               position: absolute;
+               right: 1.5rem;
+               bottom: .5rem;
+               height: .3rem;
+               width: 0%;
+               background-color: $sub-color-pink;
+               transition: width .1s ease-in-out;
+            }
+         }
+      }
+    }
  }  
- 
  
  // footer
  footer {
