@@ -1,3 +1,4 @@
+/* main */
 @keyframes cloud {
     0%{
        background-position: 0 0;
@@ -6,7 +7,6 @@
        background-position: 3000px 0;
    }
  }
-
  @keyframes island {
     0%{
         top: 74%;
@@ -15,7 +15,6 @@
         top: 76%;
    }
  }
- 
  @keyframes sim {
     0%{
         top: 53%;
@@ -24,3 +23,70 @@
         top: 55%;
    }
  }
+
+ /* about  */
+ @keyframes photoShopGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ @keyframes AiGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 25rem;
+    }
+ }
+ @keyframes HtmlGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 34rem;
+    }
+ }
+ @keyframes CssGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 34rem;
+    }
+ }
+ @keyframes ScssGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 31.5rem;
+    }
+ }
+ @keyframes JsGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 23rem;
+    }
+ }
+ @keyframes FigmaGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ @keyframes GithubGage {
+    0%{
+       width: 0;
+    }
+    100%{
+       width: 30rem;
+    }
+ }
+ 

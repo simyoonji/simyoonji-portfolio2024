@@ -155,16 +155,18 @@
              display: flex;
              flex-flow: column nowrap;
              justify-content: space-between;
-             align-items: center;
-             width: 100%;
              height: 85vh;
              padding: 1.5rem 0;
              box-sizing: border-box;
+             background-color: rgb(255, 255, 255, 0.5);
+             border-radius: 2rem;
              z-index: 2;
  
              li{   
                   width: 100%;
                   padding: 1rem 0;
+                  box-sizing: border-box;
+                  text-align: center;
                   transition: all .2s ease-in;
                    
                 a{
@@ -186,23 +188,23 @@
                          size : 1.6rem;
                          weight : 900;
                       }
-                      color: $white-color;
+                      color: $sub-color;
                       transition: all .2s ease-in;
                    }
                 }
              }
           }
-          h3 {
-             padding: 2rem 0;
-             box-sizing: border-box;
-             font-size: 2rem;
+         .header-text-change {
+             margin: 3rem 0 0 0;
+             color: $sub-color;
+             font : {
+               size: 1.8rem;
+               family: Galmuri14, sans-serif;
+             }
              text : {
                align: center;
                transform: uppercase;
              }
-             background-color: rgba(255,255,255, 0.2);
-             backdrop-filter: blur(2px);
-             border-radius: 2rem;
           }
        }
     }
@@ -259,14 +261,13 @@
                content: '';
                display: inline-block;
                position: absolute;
-               left: 1rem;
+               left: 7rem;
                top: 50%;
                transform: translateY(-50%);
-               width: 8.3rem;
+               width: 2rem;
                height: 2rem;
-               background-color: $sub-color-pink;
-               border-radius: 1rem;
-               z-index: 1;
+               background: url(../img/star-yellow.png)center center no-repeat;
+               background-size: contain;
             }
 
             span {
@@ -274,7 +275,7 @@
                padding: 1rem 2rem;
                box-sizing: border-box;
                font : {
-                  size: 20px;
+                  size: 2rem;
                   style: italic;
                }
                color: $white-color ;  
@@ -297,24 +298,66 @@
                flex-wrap: nowrap;
 
                li {
+                  display: flex;
+                  align-items: center;
                   margin: 0 0 1rem 0;
 
-                  h4 {
-
-                  }
                   span {
-                     display: block;
                      width: 5rem;
                      height: 5rem;
-
                      img {
                         width: 5rem;
                         height: 5rem;
                      }
                   }
+
+                  p {
+                     position: relative;
+                     width: 35rem;
+                     height: 1.5rem;
+                     margin: 0 0 0 2rem;
+                     border-radius: 1rem;
+                     background-color: $white-color;
+
+                     &::after {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        bottom: 0;
+                        border-radius: 1rem;
+                        background-color: $sub-color;
+                        height: 1.5rem;
+                     }
+                  }
                }
-               li:nth-of-type(n+5):nth-of-type(-n+8) img {
+               li:nth-of-type(n+3):nth-of-type(-n+8) img {
                   border-radius: 1rem;
+               }
+               li:nth-of-type(1) p::after {
+                  animation: photoShopGage 1.6s forwards;
+               }
+               li:nth-of-type(2) p::after {
+                  animation: AiGage 1.6s forwards;
+               }
+               li:nth-of-type(3) p::after {
+                  animation: HtmlGage 2.5s forwards;
+               }
+               li:nth-of-type(4) p::after {
+                  animation: CssGage 2s forwards;
+               }
+               li:nth-of-type(5) p::after {
+                  animation: ScssGage 1.7s forwards;
+               }
+               li:nth-of-type(6) p::after {
+                  animation: JsGage 1s forwards;
+               }
+               li:nth-of-type(7) p::after {
+                  animation: FigmaGage 1.6s forwards;
+               }
+               li:nth-of-type(8) p::after {
+                  animation: GithubGage 1.6s forwards;
                }
             }
 
@@ -361,13 +404,17 @@
                      background: url(../img/이모지-normal.gif)center center no-repeat;
                      background-size: cover;
                      border-radius: 20px;
+                     transition: background .1s ease-in;
                   }
                   dd {
                      width: 100%;
                      padding: .5rem 0;
                      margin: .5rem 0 0 0;
+                     text-align: center;
                      box-sizing: border-box;
-                     border: 1px solid red;
+                     border-radius: .5rem;
+                     font-size: 1.6rem;
+                     background-color: $white-color;
                   }
                }
             }
@@ -376,32 +423,21 @@
          .skillsClose {
             display: block;
             position: absolute;
-            right: .5rem;
-            bottom: .5rem;
-            padding: 1rem 2rem;
+            right: 2rem;
+            bottom: 1rem;
+            padding: .8rem 1rem;
             box-sizing: border-box;
-            color: $sub-color;
-            font-size: 15px;
-            font-style: italic;
-
+            border-radius: 3rem;
+            color: $white-color;
+            background-color: $sub-color;
+            transition: background .2s ease-in;
+            font : {
+               size: 2rem;
+               style: italic;
+            }
             &:hover {
-               color: $sub-color-pink;
-            }
-
-            &:hover::after {
-               width: 80%;
-            }
-
-            &::after {
-               content: '';
-               display: inline-block;
-               position: absolute;
-               right: 1.5rem;
-               bottom: .5rem;
-               height: .3rem;
-               width: 0%;
-               background-color: $sub-color-pink;
-               transition: width .1s ease-in-out;
+               color: $sub-color;
+               background-color: $main-color;
             }
          }
       }
