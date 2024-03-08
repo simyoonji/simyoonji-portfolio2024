@@ -108,3 +108,30 @@ modalBg.addEventListener('click', () => {
             skillsBox.style.display = 'none';
             document.body.style.overflow = 'auto';
 });
+
+// skills 모션 변경
+let motionImage = document.querySelector('.skills-right dt');
+// normal
+document.querySelector('.motions > button:nth-of-type(1)')
+        .addEventListener('click', () => {
+            motionImageChange(`url(../img/이모지-normal.gif)`);
+        });
+// Dash
+document.querySelector('.motions > button:nth-of-type(2)')
+        .addEventListener('click', () => {
+            motionImageChange(`url(../img/이모지-dash.gif)`);
+        });
+// Dance
+document.querySelector('.motions > button:nth-of-type(3)')
+        .addEventListener('click', () => {
+            motionImageChange(`url(../img/이모지-dance.gif)`);
+});
+
+let motionImageChange = (ImageUrl) => {
+    motionImage.style.background = ImageUrl;
+    motionImage.style.backgroundSize = 'cover';
+    motionImage.style.backgroundPosition = 'center';
+    motionImage.style.backgroundRepeat = 'no-repeat';
+    motionImage.style.width = '25rem';
+    motionImage.style.height = '35rem';
+}
