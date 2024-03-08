@@ -225,6 +225,8 @@
     }
     #about {
       position: relative;
+      padding: 2rem 2rem 0 0;
+      box-sizing: border-box;
       z-index: 0;
 
       .about-modal-bg {
@@ -237,11 +239,16 @@
          background-color: rgba(0,0,0,0.4);
          z-index: 1;
       }
-      .skillsOpen {
-         padding: 1rem;
-         background-color: pink;
-      }
+      .about-inner {
+         background-color: $main-color;
+         border-top-right-radius: 2rem;
+         height: 100%;
 
+         .skillsOpen {
+            padding: 1rem;
+            background-color: pink;
+         }
+      }
       .about-skills{
          display: none;
          @include position-ab;
