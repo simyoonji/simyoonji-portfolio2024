@@ -10,35 +10,29 @@ window.addEventListener('mousemove',(event) => {
     mouse.style.left = `${event.clientX}px` 
     mouse.style.top = `${event.clientY}px` 
 });
-
 menuList.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage('url(../img/mouse-2.png)');
+        mouse.classList.add(MOUSE_FOCUS);
     });
     item.addEventListener('mouseout', () => {
-        changeMouseImage('url(../img/mouse-1.png)');
+        mouse.classList.remove(MOUSE_FOCUS);
     });
 });
-
 buttonAll.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage('url(../img/mouse-2.png)');
+         mouse.classList.add(MOUSE_FOCUS);
     });
     item.addEventListener('mouseout', () => {
-         changeMouseImage('url(../img/mouse-1.png)');
+          mouse.classList.remove(MOUSE_FOCUS);
     });
 });
 
 skillsOpen.addEventListener('mouseover', () => {
-    changeMouseImage('url(../img/mouse-2.png)');
+     mouse.classList.add(MOUSE_FOCUS);
 });
 skillsOpen.addEventListener('mouseout', () => {
-     changeMouseImage('url(../img/mouse-1.png)');
+      mouse.classList.remove(MOUSE_FOCUS);
 });
-
-changeMouseImage = (event) => {
-    mouse.style.backgroundImage = event;
-}
 
 // 마우스이벤트 -> 메뉴이미지 크기 변경
 menuList.forEach((menu) => {

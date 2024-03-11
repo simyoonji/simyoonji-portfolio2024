@@ -35,14 +35,26 @@
    top: 50%;
    width: 30px;
    height: 30px;
-   background-image: url(../img/mouse-1.png);
+   background-image: url('../img/mouse-1.png');
    background-repeat: no-repeat;
    background-size: contain;
    transform: translate(-50%,-50%);
    pointer-events: none;
    z-index: 9999;
 }
-
+.mouseFocus {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   width: 30px;
+   height: 30px;
+   background-image: url('../img/mouse-2.png');
+   background-repeat: no-repeat;
+   background-size: contain;
+   transform: translate(-50%,-50%);
+   pointer-events: none;
+   z-index: 9999;
+}
 
 // main
  #main {
@@ -75,28 +87,13 @@
           z-index: 5;
           transition: .2s;
 
-          div {
-            display: inline-block;
-            animation: island 1s linear infinite alternate;
-          }
-          span {
-             display: inline-block;
-          }
           .island-base {
-             @include position-ab($top : 74%);
+             @include position-ab($top : 70%);
              width: 60rem;
-             height: 28rem;
-             background: url('../img//땅_03.png')center center no-repeat;
+             height: 35rem;
+             background: url('../img/island.gif')center center no-repeat;
              background-size: cover;
              animation: island 2s linear infinite alternate;
-          }
-          .island-sim {
-            @include position-ab($top : 53%);
-            width: 6rem;
-            height: 9rem;
-            background: url('../img/픽셀-sim2.gif')center center no-repeat;
-            background-size: cover;
-            animation: sim 2s linear infinite alternate;
           }
        }
     }
@@ -109,7 +106,6 @@
        span {
           width: 40%;
           height: 10rem;
- 
        }
        .title-1 {
           @include position-ab($left : 35% ,$top : 20%);
@@ -278,7 +274,6 @@
                background: url(../img/star-yellow.png)center center no-repeat;
                background-size: contain;
             }
-
             span {
                position: relative;
                padding: 1rem 2rem;

@@ -9,21 +9,22 @@
  }
  @keyframes island {
     0%{
-        top: 74%;
+        top: 70%;
     }
     100% {
-        top: 76%;
+        top: 72%;
    }
  }
- @keyframes sim {
-    0%{
-        top: 53%;
-    }
-    100% {
-        top: 55%;
+ @keyframes star {
+   0%{
+      opacity: 0;
+      transform: scale(1);
    }
- }
-
+   100% {
+      opacity: 1;
+      transform: scale(2);
+  }
+}
  /* about  */
  @keyframes photoShopGage {
     0%{
