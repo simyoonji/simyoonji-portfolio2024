@@ -150,9 +150,8 @@
  
        nav {
           ul {
-             display: flex;
+             @include dsp-flex();
              flex-flow: column nowrap;
-             justify-content: space-between;
              height: 85vh;
              padding: 1.5rem 0;
              box-sizing: border-box;
@@ -220,11 +219,11 @@
     section {
        width: 100%;
        height: 100vh;
+       padding: 5rem;
+       box-sizing: border-box;
     }
     #about {
       position: relative;
-      padding: 2rem 2rem 0 0;
-      box-sizing: border-box;
       z-index: 0;
 
       .about-modal-bg {
@@ -238,13 +237,70 @@
          z-index: 1;
       }
       .about-inner {
-         background-color: $main-color;
-         border-top-right-radius: 2rem;
+         display: flex;
+         flex-direction: column;
          height: 100%;
+         border: 1px solid red;
 
-         .skillsOpen {
-            padding: 1rem;
-            background-color: pink;
+         .about-inner-top {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(235, 235, 235);
+            height: 50%;
+            overflow: hidden;
+
+            span:nth-of-type(1){
+               width: 20rem;
+               height: 20rem;
+               background: url(../img/인적성검사.png)center center no-repeat;
+               background-size: contain;
+               border: 1px solid red;
+            }
+            span:nth-of-type(2){
+               justify-self: end; 
+               width: 30rem;
+               height: 100%;
+               border: 1px solid red;
+               img {
+                  width: inherit;
+                  object-fit: cover;
+               }
+            }
+         }
+         .about-inner-bottom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 50%;
+
+            dl {
+               border: 1px solid red;
+
+               dt {
+                  margin: 2rem 0;
+                  h4 {
+                     font-size: 3rem;
+                  }
+               }
+               dd {
+                  margin: 2rem 0;
+                  font-size: 1.8rem;
+
+                  b {
+
+                  }
+                  span {
+
+                  }
+               }
+            }
+            .skillsOpen {
+               width: 2rem;
+               height: 1rem;
+               padding: 1rem;
+               background-color: pink;
+            }
          }
       }
       .about-skills{
@@ -288,9 +344,8 @@
          }
          
          .skills-inner{
+            @include dsp-flex();
             position: relative;
-            display: flex;
-            justify-content: space-between;
             padding: 2rem;
             box-sizing: border-box;
 
