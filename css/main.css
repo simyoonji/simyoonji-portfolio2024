@@ -412,10 +412,26 @@ a, button {
   flex-direction: column;
   align-items: center;
 }
-#container #about .about-skills .skills-inner .skills-right dl dt {
+#container #about .about-skills .skills-inner .skills-right dl .changeMotion-normal {
   width: 25rem;
   height: 35rem;
   background: url(../img/이모지-normal.gif) center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  transition: background 0.1s ease-in;
+}
+#container #about .about-skills .skills-inner .skills-right dl .changeMotion-dash {
+  width: 25rem;
+  height: 35rem;
+  background: url(../img/이모지-dash.gif) center center no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  transition: background 0.1s ease-in;
+}
+#container #about .about-skills .skills-inner .skills-right dl .changeMotion-dance {
+  width: 25rem;
+  height: 35rem;
+  background: url(../img/이모지-dance.gif) center center no-repeat;
   background-size: cover;
   border-radius: 20px;
   transition: background 0.1s ease-in;

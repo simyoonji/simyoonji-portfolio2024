@@ -457,10 +457,26 @@
                   flex-direction: column;
                   align-items: center;
    
-                  dt{
+                  .changeMotion-normal {
                      width: 25rem;
                      height: 35rem;
                      background: url(../img/이모지-normal.gif)center center no-repeat;
+                     background-size: cover;
+                     border-radius: 20px;
+                     transition: background .1s ease-in;
+                  }
+                  .changeMotion-dash {
+                     width: 25rem;
+                     height: 35rem;
+                     background: url(../img/이모지-dash.gif)center center no-repeat;
+                     background-size: cover;
+                     border-radius: 20px;
+                     transition: background .1s ease-in;
+                  }
+                  .changeMotion-dance {
+                     width: 25rem;
+                     height: 35rem;
+                     background: url(../img/이모지-dance.gif)center center no-repeat;
                      background-size: cover;
                      border-radius: 20px;
                      transition: background .1s ease-in;

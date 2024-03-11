@@ -105,27 +105,28 @@ modalBg.addEventListener('click', () => {
 
 // skills 모션 변경
 let motionImage = document.querySelector('.skills-right dt');
+const MOTION_NORMAL = 'changeMotion-normal';
+const MOTION_DASH = 'changeMotion-dash';
+const MOTION_DANCE = 'changeMotion-dance';
+
 // normal
 document.querySelector('.motions > button:nth-of-type(1)')
         .addEventListener('click', () => {
-            motionImageChange(`url(../img/이모지-normal.gif)`);
-        });
+    motionImage.classList.remove(MOTION_DASH);
+    motionImage.classList.remove(MOTION_DANCE);
+    motionImage.classList.add(MOTION_NORMAL);
+});
 // Dash
 document.querySelector('.motions > button:nth-of-type(2)')
         .addEventListener('click', () => {
-            motionImageChange(`url(../img/이모지-dash.gif)`);
-        });
+    motionImage.classList.remove(MOTION_NORMAL);
+    motionImage.classList.remove(MOTION_DANCE);
+    motionImage.classList.add(MOTION_DASH);
+});
 // Dance
 document.querySelector('.motions > button:nth-of-type(3)')
         .addEventListener('click', () => {
-            motionImageChange(`url(../img/이모지-dance.gif)`);
+    motionImage.classList.remove(MOTION_NORMAL);
+    motionImage.classList.remove(MOTION_DASH);
+    motionImage.classList.add(MOTION_DANCE);
 });
-
-let motionImageChange = (ImageUrl) => {
-    motionImage.style.background = ImageUrl;
-    motionImage.style.backgroundSize = 'cover';
-    motionImage.style.backgroundPosition = 'center';
-    motionImage.style.backgroundRepeat = 'no-repeat';
-    motionImage.style.width = '25rem';
-    motionImage.style.height = '35rem';
-}
