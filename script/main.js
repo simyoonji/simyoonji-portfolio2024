@@ -1,9 +1,9 @@
 //마우스
-const mouse = document.querySelector('.mouse')
+let mouse = document.querySelector('.mouse');
 const menuList = document.querySelectorAll('.page');
-const menuListA = document.querySelectorAll('.page > a');
 const buttonAll = document.querySelectorAll('button');
 const skillsOpen = document.querySelector('.skillsOpen')
+const MOUSE_FOCUS = 'mouseFocus';
 
 // 마우스 변경
 window.addEventListener('mousemove',(event) => {
@@ -13,32 +13,32 @@ window.addEventListener('mousemove',(event) => {
 
 menuList.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage(`url('../img/mouse-2.png')`);
+        changeMouseImage('url(../img/mouse-2.png)');
     });
     item.addEventListener('mouseout', () => {
-        changeMouseImage(`url('../img/mouse-1.png')`);
+        changeMouseImage('url(../img/mouse-1.png)');
     });
 });
 
 buttonAll.forEach((item) => {
     item.addEventListener('mouseover', () => {
-        changeMouseImage(`url('../img/mouse-2.png')`);
+        changeMouseImage('url(../img/mouse-2.png)');
     });
     item.addEventListener('mouseout', () => {
-        changeMouseImage(`url('../img/mouse-1.png')`);
+         changeMouseImage('url(../img/mouse-1.png)');
     });
 });
 
 skillsOpen.addEventListener('mouseover', () => {
-    changeMouseImage(`url('../img/mouse-2.png')`);
+    changeMouseImage('url(../img/mouse-2.png)');
 });
 skillsOpen.addEventListener('mouseout', () => {
-    changeMouseImage(`url('../img/mouse-1.png')`);
+     changeMouseImage('url(../img/mouse-1.png)');
 });
 
-let changeMouseImage = (MouseUrl) => {
-    mouse.style.backgroundImage = MouseUrl;
-};
+changeMouseImage = (event) => {
+    mouse.style.backgroundImage = event;
+}
 
 // 마우스이벤트 -> 메뉴이미지 크기 변경
 menuList.forEach((menu) => {
