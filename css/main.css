@@ -16,8 +16,8 @@ a, button {
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   background-image: url("../img/mouse-1.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -30,8 +30,8 @@ a, button {
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   background-image: url("../img/mouse-2.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -134,7 +134,7 @@ a, button {
   height: 100vh;
   padding: 1.5rem;
   box-sizing: border-box;
-  background: url("../img/헤더헤더2.jpg") 0 center no-repeat;
+  background: url("../img/헤더.jpg") 0 center no-repeat;
   background-size: cover;
   overflow: hidden;
 }
@@ -171,14 +171,15 @@ a, button {
   text-transform: uppercase;
   font-size: 1.6rem;
   font-weight: 900;
-  color: #466da7;
+  color: #74a9ec;
   transition: all 0.2s ease-in;
 }
 #wrap header nav .header-text-change {
   margin: 3rem 0 0 0;
-  color: #466da7;
-  font-size: 1.8rem;
-  font-family: Galmuri14, sans-serif;
+  color: #74a9ec;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: bold;
   text-align: center;
   text-transform: uppercase;
 }
@@ -193,7 +194,7 @@ a, button {
 #container section {
   width: 100%;
   height: 100vh;
-  padding: 5rem;
+  padding: 3rem;
   box-sizing: border-box;
 }
 #container #about {
@@ -208,64 +209,159 @@ a, button {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
   z-index: 1;
 }
 #container #about .about-inner {
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100%;
-  border: 1px solid red;
 }
 #container #about .about-inner .about-inner-top {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: rgb(235, 235, 235);
-  height: 50%;
+  height: 45%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-color: #e2edff;
   overflow: hidden;
 }
-#container #about .about-inner .about-inner-top span:nth-of-type(1) {
-  width: 20rem;
-  height: 20rem;
-  background: url(../img/인적성검사.png) center center no-repeat;
-  background-size: contain;
-  border: 1px solid red;
+#container #about .about-inner .about-inner-top div {
+  height: 100%;
 }
-#container #about .about-inner .about-inner-top span:nth-of-type(2) {
-  justify-self: end;
+#container #about .about-inner .about-inner-top div:nth-of-type(1) {
+  position: relative;
+  width: 75%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(1) span {
+  position: absolute;
+  width: 50%;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5rem;
+  white-space: nowrap;
+  color: #74a9ec;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 600;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(1) {
+  left: 4%;
+  top: 20%;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) {
+  right: 4%;
+  bottom: 20%;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) dl {
+  display: flex;
+  justify-content: center;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) dl dd {
+  margin: 0 2rem 0 0;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(2) {
+  position: relative;
+  width: 25%;
+}
+#container #about .about-inner .about-inner-top div:nth-of-type(2) span {
+  position: absolute;
+  right: 0;
   width: 30rem;
   height: 100%;
-  border: 1px solid red;
+  background: url(../img/이모지.png) center center no-repeat;
+  background-size: cover;
 }
-#container #about .about-inner .about-inner-top span:nth-of-type(2) img {
-  width: inherit;
-  -o-object-fit: cover;
-     object-fit: cover;
+#container #about .about-inner .about-inner-top div:nth-of-type(2)::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: -20%;
+  top: 0;
+  width: 35rem;
+  height: 100%;
+  background-color: #74a9ec;
+  transform: skew(-20deg);
 }
 #container #about .about-inner .about-inner-bottom {
+  padding: 0 0 1rem 0;
+  box-sizing: border-box;
+  border: 1px solid #e2edff;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+#container #about .about-inner .about-inner-bottom h3 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  background-color: #74a9ec;
+  color: #fff;
+  border-top: 0.4rem double #e2edff;
+  border-bottom: 0.4rem double #e2edff;
+}
+#container #about .about-inner .about-inner-bottom div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 50%;
 }
-#container #about .about-inner .about-inner-bottom dl {
-  border: 1px solid red;
-}
-#container #about .about-inner .about-inner-bottom dl dt {
+#container #about .about-inner .about-inner-bottom div dl dt {
   margin: 2rem 0;
 }
-#container #about .about-inner .about-inner-bottom dl dt h4 {
+#container #about .about-inner .about-inner-bottom div dl dt h4 {
+  text-align: center;
   font-size: 3rem;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #74a9ec;
 }
-#container #about .about-inner .about-inner-bottom dl dd {
-  margin: 2rem 0;
-  font-size: 1.8rem;
+#container #about .about-inner .about-inner-bottom div dl dd {
+  margin: 2rem;
+  white-space: nowrap;
 }
-#container #about .about-inner .about-inner-bottom .skillsOpen {
-  width: 2rem;
-  height: 1rem;
+#container #about .about-inner .about-inner-bottom div dl dd em {
+  margin: 0 3rem 0 0;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #74a9ec;
+}
+#container #about .about-inner .about-inner-bottom div dl dd span {
+  font-size: 1.5rem;
+}
+#container #about .about-inner .about-inner-bottom .about dd:nth-of-type(1) em {
+  margin: 0 4rem 0 0;
+}
+#container #about .about-inner .skillsOpen {
+  display: block;
+  position: absolute;
+  right: 5%;
+  bottom: 6%;
+  width: 5rem;
+  height: 8rem;
+  background: url(../img/지팡이.png) center center no-repeat;
+  background-size: cover;
+  animation: skillsBtn 0.5s ease infinite alternate;
+}
+#container #about .about-inner .skillsOpen::before {
+  content: "skills";
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #74a9ec;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem;
-  background-color: pink;
+  border-radius: 2rem;
 }
 #container #about .about-skills {
   display: none;
@@ -283,7 +379,7 @@ a, button {
   position: relative;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-color: #466da7;
+  background-color: #74a9ec;
 }
 #container #about .about-skills .about-skills-title::after {
   content: "";
@@ -315,8 +411,8 @@ a, button {
 }
 #container #about .about-skills .skills-inner ul {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   flex-wrap: nowrap;
 }
 #container #about .about-skills .skills-inner ul li {
@@ -348,7 +444,7 @@ a, button {
   top: 0;
   bottom: 0;
   border-radius: 1rem;
-  background-color: #466da7;
+  background-color: #74a9ec;
   height: 1.5rem;
 }
 #container #about .about-skills .skills-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
@@ -405,7 +501,7 @@ a, button {
   background-size: contain;
 }
 #container #about .about-skills .skills-inner .skills-right .motions button:hover {
-  box-shadow: 0 0 0 0.2rem #466da7;
+  box-shadow: 0 0 0 0.2rem #74a9ec;
 }
 #container #about .about-skills .skills-inner .skills-right dl {
   display: flex;
@@ -455,13 +551,14 @@ a, button {
   box-sizing: border-box;
   border-radius: 3rem;
   color: #fff;
-  background-color: #466da7;
+  background-color: #74a9ec;
   transition: background 0.2s ease-in;
   font-size: 2rem;
   font-style: italic;
+  font-weight: 500;
 }
 #container #about .about-skills .skillsClose:hover {
-  color: #466da7;
+  color: #74a9ec;
   background-color: #e2edff;
 }
 

@@ -58,7 +58,7 @@ const sectionAbout = document.getElementById('about');
 const sectionProject = document.getElementById('project');
 const sectionContact = document.getElementById('contact');
 const sectionLast = document.getElementById('section');
-const headerTextChange = document.querySelector('.header-text-change');
+let headerTextChange = document.querySelector('.header-text-change');
 
 window.addEventListener('scroll', () => {
     const windowYOffset = window.pageYOffset;

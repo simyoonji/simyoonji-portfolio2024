@@ -1,5 +1,9 @@
 // FONT family: Galmuri14, sans-serif;
 // mixin
+@mixin elementSize($width, $height){
+   width: $width;
+   height: $height;
+}
 @mixin dsp-flex {
     display: flex;
     justify-content: space-between;
@@ -10,12 +14,15 @@
     top : $top;
     transform: translate(-50%,-50%);
  }
- 
+ @mixin font($fSize, $fStyle : normal, $fWeight : bold){
+   font-size: $fSize;
+   font-style: $fStyle;
+   font-weight: $fWeight;
+ }
  // 변수
  $white-color : #fff;
- $main-color : #e2edff;
- $sub-color : #466da7;
- $sub-color2 : rgb(124, 133, 255);
+ $sub-color : #e2edff;
+ $main-color : #74a9ec;
  $sub-color-pink : rgb(254, 137, 164);
  
  body,html {
@@ -33,8 +40,7 @@
    position: fixed;
    left: 50%;
    top: 50%;
-   width: 30px;
-   height: 30px;
+   @include elementSize($width:3rem, $height:3rem);
    background-image: url('../img/mouse-1.png');
    background-repeat: no-repeat;
    background-size: contain;
@@ -46,8 +52,7 @@
    position: fixed;
    left: 50%;
    top: 50%;
-   width: 30px;
-   height: 30px;
+   @include elementSize($width:3rem, $height:3rem);
    background-image: url('../img/mouse-2.png');
    background-repeat: no-repeat;
    background-size: contain;
@@ -59,8 +64,7 @@
 // main
  #main {
     position: relative;
-    width: 100%;
-    height: 100vh;
+    @include elementSize($width:100%, $height:100vh);
     z-index: 0;
     overflow: hidden;
  
@@ -70,8 +74,7 @@
           left: 0;
           top: 0;
           display: inline-block;
-          width: 100vw;
-          height: 100vh;
+          @include elementSize($width:100vw, $height:100vh);
           background: url('../img/그레인구름.jpg')0 center / 120% repeat-x;
           background: {
              size: cover;
@@ -81,16 +84,14 @@
           z-index: 1;
        }
        .bg-island {
-         @include position-ab();
-          width: 124rem;
-          height: 100%;
+          @include position-ab();
+          @include elementSize($width:124rem, $height:100%);
           z-index: 5;
           transition: .2s;
 
           .island-base {
              @include position-ab($top : 70%);
-             width: 60rem;
-             height: 35rem;
+             @include elementSize($width:60rem, $height:35rem);
              background: url('../img/island.gif')center center no-repeat;
              background-size: cover;
              animation: island 2s linear infinite alternate;
@@ -99,8 +100,7 @@
     }
     .title {
        @include position-ab;
-       width: 124rem;
-       height: 100%;
+       @include elementSize($width:124rem, $height:100%);
        z-index: 6;
  
        span {
@@ -140,11 +140,10 @@
        position: sticky;
        left: 0;
        top: 0;
-       width: 15rem;
-       height: 100vh;
+       @include elementSize($width:15rem, $height:100vh);
        padding: 1.5rem;
        box-sizing: border-box;
-       background:url('../img/헤더헤더2.jpg')0 center no-repeat;
+       background:url('../img/헤더.jpg')0 center no-repeat;
        background-size: cover;
        overflow: hidden;
  
@@ -185,7 +184,7 @@
                          size : 1.6rem;
                          weight : 900;
                       }
-                      color: $sub-color;
+                      color: $main-color;
                       transition: all .2s ease-in;
                    }
                 }
@@ -193,11 +192,8 @@
           }
          .header-text-change {
              margin: 3rem 0 0 0;
-             color: $sub-color;
-             font : {
-               size: 1.8rem;
-               family: Galmuri14, sans-serif;
-             }
+             color: $main-color;
+             @include font($fSize : 2.5rem);
              text : {
                align: center;
                transform: uppercase;
@@ -219,7 +215,7 @@
     section {
        width: 100%;
        height: 100vh;
-       padding: 5rem;
+       padding: 3rem;
        box-sizing: border-box;
     }
     #about {
@@ -231,77 +227,168 @@
          position: absolute;
          left: 0;
          top: 0;
-         width: 100%;
-         height: 100vh;
+         @include elementSize($width:100%, $height:100vh);
          background-color: rgba(0,0,0,0.4);
+         backdrop-filter: blur(.5rem);
          z-index: 1;
       }
       .about-inner {
          display: flex;
          flex-direction: column;
+         position: relative;
          height: 100%;
-         border: 1px solid red;
 
          .about-inner-top {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgb(235, 235, 235);
-            height: 50%;
+            @include dsp-flex();
+            height: 45%;
+            border : {
+               top-left-radius: 2rem;
+               top-right-radius: 2rem;
+            }
+            background-color: $sub-color;
             overflow: hidden;
 
-            span:nth-of-type(1){
-               width: 20rem;
-               height: 20rem;
-               background: url(../img/인적성검사.png)center center no-repeat;
-               background-size: contain;
-               border: 1px solid red;
-            }
-            span:nth-of-type(2){
-               justify-self: end; 
-               width: 30rem;
+            div {
                height: 100%;
-               border: 1px solid red;
-               img {
-                  width: inherit;
-                  object-fit: cover;
+            }
+            div:nth-of-type(1) { 
+               position: relative;
+               width: 75%;
+               padding: 2rem;
+               box-sizing: border-box;
+
+               span {
+                  position: absolute;
+                  width: 50%;
+                  padding: 2rem;
+                  box-sizing: border-box;
+                  background-color: $white-color;
+                  border-radius: 5rem;
+                  white-space: nowrap;
+                  color: $main-color;
+                  @include font($fSize : 1.8rem, $fWeight : 600);
+               }
+               span:nth-of-type(1) {
+                  left: 4%;
+                  top: 20%;
+               }
+               span:nth-of-type(2) {
+                  right: 4%;
+                  bottom: 20%;
+
+                  dl {
+                     display: flex;
+                     justify-content: center;
+
+                     dd {
+                        margin: 0 2rem 0 0;
+                        
+                        b {
+
+                        }
+                     }
+                  }
+               }
+            }
+            div:nth-of-type(2) {
+               position: relative;
+               width: 25%;
+
+               span{
+                  position: absolute;
+                  right: 0;
+                  @include elementSize($width:30rem, $height:100%);
+                  background: url(../img/이모지.png)center center no-repeat;
+                  background-size: cover;
+               }
+               &::before {
+                  content: '';
+                  display: inline-block;
+                  position: absolute;
+                  right: -20%;
+                  top: 0;
+                  width: 35rem;
+                  height: 100%;
+                  background-color: $main-color;
+                  transform: skew(-20deg);
                }
             }
          }
          .about-inner-bottom {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            height: 50%;
+            padding: 0 0 1rem 0;
+            box-sizing: border-box;
+            border: 1px solid $sub-color;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            
+            h3 {
+               @include font($fSize: 3rem, $fWeight:400);
+               padding: 1rem 2rem;
+               box-sizing: border-box;
+               background-color: $main-color;
+               color: $white-color;
+               border-top: .4rem double $sub-color;
+               border-bottom: .4rem double $sub-color;
+            }
+            div {
+               display: grid;
+               grid-template-columns: repeat(3, 1fr);
 
-            dl {
-               border: 1px solid red;
-
-               dt {
-                  margin: 2rem 0;
-                  h4 {
-                     font-size: 3rem;
+               dl {
+                  dt {
+                     margin: 2rem 0;
+                     h4 {
+                        text-align: center;
+                        @include font($fSize: 3rem);
+                        text-transform: uppercase;
+                        color: $main-color;
+                     }
                   }
-               }
-               dd {
-                  margin: 2rem 0;
-                  font-size: 1.8rem;
-
-                  b {
-
-                  }
-                  span {
-
+                  dd {
+                     margin: 2rem;
+                     white-space: nowrap;
+                     em {
+                        margin: 0 3rem 0 0;
+                        @include font($fSize: 2rem);
+                        color: $main-color;
+                     }
+                     span {
+                        font-size: 1.5rem;
+                     }
                   }
                }
             }
-            .skillsOpen {
-               width: 2rem;
-               height: 1rem;
-               padding: 1rem;
-               background-color: pink;
+            .about {
+              dd:nth-of-type(1){
+               em {
+                  margin: 0 4rem 0 0;
+               }
+              }
             }
          }
+         .skillsOpen {
+            display: block;
+            position: absolute;
+            right: 5%;
+            bottom: 6%;
+            @include elementSize($width : 5rem,$height : 8rem);
+            background: url(../img/지팡이.png)center center no-repeat;
+            background-size: cover;
+            animation: skillsBtn 0.5s ease infinite alternate;
+
+            &::before {
+               content: 'skills';
+               display: inline-block;
+               position: absolute;
+               bottom: 0;
+               text-transform: uppercase;
+               @include font($fSize : 1.4rem,$fStyle : italic);
+               color: $main-color;
+               background-color: rgba(255, 255, 255, 0.9);
+               padding: 1rem;
+               border-radius: 2rem;
+            }
+          }
       }
       .about-skills{
          display: none;
@@ -310,13 +397,15 @@
          transform: translate(-50%,-50%);
          border-radius: 20px;
          z-index: 2;
-         background-color: $main-color;
+         background-color: $sub-color;
          
          .about-skills-title {
             position: relative;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            background-color: $sub-color;
+            border : {
+               top-left-radius: 20px;
+               top-right-radius: 20px;
+            }
+            background-color: $main-color;
 
             &::after {
                content: '';
@@ -325,8 +414,7 @@
                left: 7rem;
                top: 50%;
                transform: translateY(-50%);
-               width: 2rem;
-               height: 2rem;
+               @include elementSize($width:2rem, $height:2rem);
                background: url(../img/star-yellow.png)center center no-repeat;
                background-size: contain;
             }
@@ -352,9 +440,11 @@
             // skills list
             ul {
                display: flex;
-               flex-direction: column;
                align-items: center;
-               flex-wrap: nowrap;
+               flex : {
+                  direction: column;
+                  wrap: nowrap;
+               }
 
                li {
                   display: flex;
@@ -362,18 +452,15 @@
                   margin: 0 0 1rem 0;
 
                   span {
-                     width: 5rem;
-                     height: 5rem;
+                     @include elementSize($width:5rem, $height:5rem);
                      img {
-                        width: 5rem;
-                        height: 5rem;
+                        @include elementSize($width:5rem, $height:5rem);
                      }
                   }
 
                   p {
                      position: relative;
-                     width: 35rem;
-                     height: 1.5rem;
+                     @include elementSize($width:35rem, $height:1.5rem);
                      margin: 0 0 0 2rem;
                      border-radius: 1rem;
                      background-color: $white-color;
@@ -386,7 +473,7 @@
                         top: 0;
                         bottom: 0;
                         border-radius: 1rem;
-                        background-color: $sub-color;
+                        background-color: $main-color;
                         height: 1.5rem;
                      }
                   }
@@ -429,8 +516,7 @@
                   margin: 0 1rem 0 0;
 
                   button {
-                     width: 5rem;
-                     height: 5rem;
+                     @include elementSize($width:5rem, $height:5rem);
                      margin: 0 0 1rem 0;
                      border-radius: 1rem;
 
@@ -447,7 +533,7 @@
                         background-size: contain;
                      }
                      &:hover {
-                        box-shadow: 0 0 0 .2rem $sub-color;
+                        box-shadow: 0 0 0 .2rem $main-color;
                      }
                   }
                }
@@ -458,24 +544,21 @@
                   align-items: center;
    
                   .changeMotion-normal {
-                     width: 25rem;
-                     height: 35rem;
+                     @include elementSize($width:25rem, $height:35rem);
                      background: url(../img/이모지-normal.gif)center center no-repeat;
                      background-size: cover;
                      border-radius: 20px;
                      transition: background .1s ease-in;
                   }
                   .changeMotion-dash {
-                     width: 25rem;
-                     height: 35rem;
+                     @include elementSize($width:25rem, $height:35rem);
                      background: url(../img/이모지-dash.gif)center center no-repeat;
                      background-size: cover;
                      border-radius: 20px;
                      transition: background .1s ease-in;
                   }
                   .changeMotion-dance {
-                     width: 25rem;
-                     height: 35rem;
+                     @include elementSize($width:25rem, $height:35rem);
                      background: url(../img/이모지-dance.gif)center center no-repeat;
                      background-size: cover;
                      border-radius: 20px;
@@ -504,15 +587,13 @@
             box-sizing: border-box;
             border-radius: 3rem;
             color: $white-color;
-            background-color: $sub-color;
+            background-color: $main-color;
             transition: background .2s ease-in;
-            font : {
-               size: 2rem;
-               style: italic;
-            }
+            @include font($fSize : 2rem, $fStyle : italic, $fWeight : 500);
+
             &:hover {
-               color: $sub-color;
-               background-color: $main-color;
+               color: $main-color;
+               background-color: $sub-color;
             }
          }
       }
@@ -522,5 +603,5 @@
  // footer
  footer {
     height: 100vh;
-    background-color: $main-color;
+    background-color: $sub-color;
  }
