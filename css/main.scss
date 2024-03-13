@@ -258,12 +258,6 @@
                padding: 2rem;
                box-sizing: border-box;
 
-               h2 {
-                  @include font($fSize : 5rem, $fStyle : italic);
-                  text-transform: uppercase;
-                  color: $main-color;
-               }
-
                div {
                   padding: 0rem;
                   white-space: nowrap;
@@ -286,9 +280,16 @@
                         margin: 0 1rem 0 0;
                         box-sizing: border-box;
                         border-radius: 2rem;
-                        @include font($fSize : 1.3rem, $fWeight : 500);
+                        @include font($fSize : 1.3rem, $fWeight : 600);
                         color: $main-color;
                         background-color: $white-color;
+                        transition: all .2s ease;
+
+                        &:hover {
+                           background-color: $main-color;
+                           color: $white-color;
+                           transform: translateY(-10%);
+                        }
                      }
                   }
                }
@@ -605,6 +606,75 @@
          }
       }
     }
+
+    #works {
+      .works-inner {
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         border: 1px solid red;
+         height: 100%;
+
+         div {
+            position: relative;
+            padding: 2rem;
+            box-sizing: border-box;
+            border: 1px solid red;
+         }
+         .works-inner-left{
+            span {
+               @include position-ab();
+               width: 40rem;
+               height: 35rem;
+               background: url(../img/works-img.png)center center no-repeat;
+               background-size: contain;
+               border: 1px solid red;
+            }
+         }
+         .works-inner-right {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            div {
+               @include position-ab();
+               white-space: nowrap;
+
+               dl {
+                  border: 1px solid red;
+                  dt {
+   
+                     p {
+                        @include font($fSize : 2rem);
+                     }
+                     h3{
+                        @include font($fSize : 3rem);
+                     }
+                  }
+                  dd {
+   
+                  }
+               }
+   
+               ul {
+                  border: 1px solid red;
+                  display: flex;
+
+                  li {
+                     padding: 2rem;
+                     box-sizing: border-box;
+                     background-color: pink;
+                  }
+               }
+            }
+         }
+      }
+    }
+
+    .section-title {
+      @include font($fSize : 5rem, $fStyle : italic);
+      text-transform: uppercase;
+      color: $main-color;
+   }
  }  
  
  // footer

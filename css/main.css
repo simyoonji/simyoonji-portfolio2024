@@ -238,13 +238,6 @@ a, button {
   padding: 2rem;
   box-sizing: border-box;
 }
-#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) h2 {
-  font-size: 5rem;
-  font-style: italic;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #74a9ec;
-}
 #container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div {
   padding: 0rem;
   white-space: nowrap;
@@ -271,9 +264,15 @@ a, button {
   border-radius: 2rem;
   font-size: 1.3rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   color: #74a9ec;
   background-color: #fff;
+  transition: all 0.2s ease;
+}
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div ul li:hover {
+  background-color: #74a9ec;
+  color: #fff;
+  transform: translateY(-10%);
 }
 #container #profile .profile-inner .profile-inner-top div:nth-of-type(2) {
   position: relative;
@@ -572,6 +571,70 @@ a, button {
 #container #profile .profile-skills .skillsClose:hover {
   color: #74a9ec;
   background-color: #e2edff;
+}
+#container #works .works-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid red;
+  height: 100%;
+}
+#container #works .works-inner div {
+  position: relative;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+#container #works .works-inner .works-inner-left span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  height: 35rem;
+  background: url(../img/works-img.png) center center no-repeat;
+  background-size: contain;
+  border: 1px solid red;
+}
+#container #works .works-inner .works-inner-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#container #works .works-inner .works-inner-right div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+#container #works .works-inner .works-inner-right div dl {
+  border: 1px solid red;
+}
+#container #works .works-inner .works-inner-right div dl dt p {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: bold;
+}
+#container #works .works-inner .works-inner-right div dl dt h3 {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: bold;
+}
+#container #works .works-inner .works-inner-right div ul {
+  border: 1px solid red;
+  display: flex;
+}
+#container #works .works-inner .works-inner-right div ul li {
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: pink;
+}
+#container .section-title {
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #74a9ec;
 }
 
 footer {

@@ -52,10 +52,9 @@ menuList.forEach((menu) => {
         document.body.style.overflow = 'auto';
     });
 });
-
 // 스크롤 이벤트 -> 헤더의 글씨 변화
 const sectionProfile = document.getElementById('profile');
-const sectionProject = document.getElementById('project');
+const sectionWorks = document.getElementById('works');
 const sectionContact = document.getElementById('contact');
 const sectionLast = document.getElementById('section');
 let headerTextChange = document.querySelector('.header-text-change');
@@ -63,16 +62,16 @@ let headerTextChange = document.querySelector('.header-text-change');
 window.addEventListener('scroll', () => {
     const windowYOffset = window.pageYOffset;
     const sectionProfileHalf = sectionProfile.offsetTop + sectionProfile.offsetHeight / 2;
-    const sectionProjectHalf = sectionProject.offsetTop + sectionProject.offsetHeight / 2;
+    const sectionWorksHalf = sectionWorks.offsetTop + sectionWorks.offsetHeight / 2;
     const sectionContactHalf = sectionContact.offsetTop + sectionContact.offsetHeight / 2;
     const sectionLastHalf = sectionLast.offsetTop + sectionLast.offsetHeight / 2;
 
     if (windowYOffset < sectionProfileHalf) {
         headerTextChange.textContent = "MENU";
-    } else if (windowYOffset < sectionProjectHalf) {
+    } else if (windowYOffset < sectionWorksHalf) {
         headerTextChange.textContent = "Profile";
     } else if (windowYOffset < sectionContactHalf) {
-        headerTextChange.textContent = "PROJECT";
+        headerTextChange.textContent = "Works";
     } else if (windowYOffset < sectionLastHalf) {
         headerTextChange.textContent = "CONTACT";
     } else {

@@ -1,8 +1,13 @@
+::selection {
+    background-color: rgb(254, 137, 164); /* 드래그 시 선택 영역의 배경색 */
+    color: #fff; /* 드래그 시 선택된 텍스트의 색상 */
+}
+
 html {
     font-family: lato, sans-serif;
     font-size: 10px;
 }
-html, body, div, span, ul, li applet, object, iframe,
+html, body, div, span, ul, li,
 h1, h2, h3, h4, h5, h6, p, figure, dl, dt, dd {
 	margin: 0;
 	padding: 0;
@@ -38,14 +43,6 @@ span {
     display: block;
 	content: '';
 	clear: both;
-}
-.blind {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
 }
 
     /* input x 지우기 */
