@@ -101,6 +101,7 @@ a, button {
   transform: translate(-50%, -50%);
   background: url("../img/8비트-이름_03.png") center center no-repeat;
   background-size: contain;
+  animation: title-1 1s alternate forwards;
 }
 #main .title .title-2 {
   position: absolute;
@@ -109,6 +110,7 @@ a, button {
   transform: translate(-50%, -50%);
   background: url("../img/8비트-제목_03.png") center center no-repeat;
   background-size: contain;
+  animation: title-2 1s alternate forwards;
 }
 #main p {
   position: absolute;
@@ -197,11 +199,11 @@ a, button {
   padding: 3rem;
   box-sizing: border-box;
 }
-#container #about {
+#container #profile {
   position: relative;
   z-index: 0;
 }
-#container #about .about-modal-bg {
+#container #profile .profile-modal-bg {
   display: none;
   position: absolute;
   left: 0;
@@ -211,15 +213,15 @@ a, button {
   background-color: rgba(0, 0, 0, 0.4);
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
-  z-index: 1;
+  z-index: 5;
 }
-#container #about .about-inner {
+#container #profile .profile-inner {
   display: flex;
   flex-direction: column;
   position: relative;
   height: 100%;
 }
-#container #about .about-inner .about-inner-top {
+#container #profile .profile-inner .profile-inner-top {
   display: flex;
   justify-content: space-between;
   height: 45%;
@@ -228,48 +230,56 @@ a, button {
   background-color: #e2edff;
   overflow: hidden;
 }
-#container #about .about-inner .about-inner-top div {
-  height: 100%;
-}
-#container #about .about-inner .about-inner-top div:nth-of-type(1) {
-  position: relative;
-  width: 75%;
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
   padding: 2rem;
   box-sizing: border-box;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(1) span {
-  position: absolute;
-  width: 50%;
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) h2 {
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #74a9ec;
+}
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div {
+  padding: 0rem;
+  white-space: nowrap;
+}
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div span {
   padding: 2rem;
   box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 5rem;
+  border-radius: 2rem;
   white-space: nowrap;
   color: #74a9ec;
-  font-size: 1.8rem;
+  background-color: #fff;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 600;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(1) {
-  left: 4%;
-  top: 20%;
-}
-#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) {
-  right: 4%;
-  bottom: 20%;
-}
-#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) dl {
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div ul {
   display: flex;
-  justify-content: center;
+  margin: 2rem 0 0 0;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(1) span:nth-of-type(2) dl dd {
-  margin: 0 2rem 0 0;
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(1) div ul li {
+  padding: 1rem;
+  margin: 0 1rem 0 0;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 500;
+  color: #74a9ec;
+  background-color: #fff;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(2) {
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(2) {
   position: relative;
-  width: 25%;
+  width: 30%;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(2) span {
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(2) span {
   position: absolute;
   right: 0;
   width: 30rem;
@@ -277,7 +287,7 @@ a, button {
   background: url(../img/이모지.png) center center no-repeat;
   background-size: cover;
 }
-#container #about .about-inner .about-inner-top div:nth-of-type(2)::before {
+#container #profile .profile-inner .profile-inner-top div:nth-of-type(2)::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -288,17 +298,11 @@ a, button {
   background-color: #74a9ec;
   transform: skew(-20deg);
 }
-#container #about .about-inner .about-inner-bottom {
+#container #profile .profile-inner .profile-inner-bottom {
   padding: 0 0 1rem 0;
   box-sizing: border-box;
-  border: 1px solid #e2edff;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
 }
-#container #about .about-inner .about-inner-bottom h3 {
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 400;
+#container #profile .profile-inner .profile-inner-bottom p {
   padding: 1rem 2rem;
   box-sizing: border-box;
   background-color: #74a9ec;
@@ -306,14 +310,14 @@ a, button {
   border-top: 0.4rem double #e2edff;
   border-bottom: 0.4rem double #e2edff;
 }
-#container #about .about-inner .about-inner-bottom div {
+#container #profile .profile-inner .profile-inner-bottom div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-#container #about .about-inner .about-inner-bottom div dl dt {
+#container #profile .profile-inner .profile-inner-bottom div dl dt {
   margin: 2rem 0;
 }
-#container #about .about-inner .about-inner-bottom div dl dt h4 {
+#container #profile .profile-inner .profile-inner-bottom div dl dt h4 {
   text-align: center;
   font-size: 3rem;
   font-style: normal;
@@ -321,24 +325,32 @@ a, button {
   text-transform: uppercase;
   color: #74a9ec;
 }
-#container #about .about-inner .about-inner-bottom div dl dd {
+#container #profile .profile-inner .profile-inner-bottom div dl dd {
   margin: 2rem;
   white-space: nowrap;
 }
-#container #about .about-inner .about-inner-bottom div dl dd em {
+#container #profile .profile-inner .profile-inner-bottom div dl dd em {
   margin: 0 3rem 0 0;
   font-size: 2rem;
   font-style: normal;
   font-weight: bold;
   color: #74a9ec;
 }
-#container #about .about-inner .about-inner-bottom div dl dd span {
+#container #profile .profile-inner .profile-inner-bottom div dl dd span {
   font-size: 1.5rem;
 }
-#container #about .about-inner .about-inner-bottom .about dd:nth-of-type(1) em {
+#container #profile .profile-inner .profile-inner-bottom .about dd:nth-of-type(1) em {
+  margin: 0 3.2rem 0 0;
+}
+#container #profile .profile-inner .profile-inner-bottom .about dd:nth-of-type(1) span {
+  font-weight: 500;
+  -webkit-text-decoration: underline wavy pink;
+          text-decoration: underline wavy pink;
+}
+#container #profile .profile-inner .profile-inner-bottom .about dd:nth-of-type(2) em {
   margin: 0 4rem 0 0;
 }
-#container #about .about-inner .skillsOpen {
+#container #profile .profile-inner .skillsOpen {
   display: block;
   position: absolute;
   right: 5%;
@@ -349,7 +361,7 @@ a, button {
   background-size: cover;
   animation: skillsBtn 0.5s ease infinite alternate;
 }
-#container #about .about-inner .skillsOpen::before {
+#container #profile .profile-inner .skillsOpen::before {
   content: "skills";
   display: inline-block;
   position: absolute;
@@ -363,7 +375,7 @@ a, button {
   padding: 1rem;
   border-radius: 2rem;
 }
-#container #about .about-skills {
+#container #profile .profile-skills {
   display: none;
   position: absolute;
   left: 50%;
@@ -372,16 +384,16 @@ a, button {
   width: 80rem;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  z-index: 2;
+  z-index: 6;
   background-color: #e2edff;
 }
-#container #about .about-skills .about-skills-title {
+#container #profile .profile-skills .profile-skills-title {
   position: relative;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   background-color: #74a9ec;
 }
-#container #about .about-skills .about-skills-title::after {
+#container #profile .profile-skills .profile-skills-title::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -393,7 +405,7 @@ a, button {
   background: url(../img/star-yellow.png) center center no-repeat;
   background-size: contain;
 }
-#container #about .about-skills .about-skills-title span {
+#container #profile .profile-skills .profile-skills-title span {
   position: relative;
   padding: 1rem 2rem;
   box-sizing: border-box;
@@ -402,33 +414,33 @@ a, button {
   color: #fff;
   z-index: 2;
 }
-#container #about .about-skills .skills-inner {
+#container #profile .profile-skills .skills-inner {
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 2rem;
   box-sizing: border-box;
 }
-#container #about .about-skills .skills-inner ul {
+#container #profile .profile-skills .skills-inner ul {
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
 }
-#container #about .about-skills .skills-inner ul li {
+#container #profile .profile-skills .skills-inner ul li {
   display: flex;
   align-items: center;
   margin: 0 0 1rem 0;
 }
-#container #about .about-skills .skills-inner ul li span {
+#container #profile .profile-skills .skills-inner ul li span {
   width: 5rem;
   height: 5rem;
 }
-#container #about .about-skills .skills-inner ul li span img {
+#container #profile .profile-skills .skills-inner ul li span img {
   width: 5rem;
   height: 5rem;
 }
-#container #about .about-skills .skills-inner ul li p {
+#container #profile .profile-skills .skills-inner ul li p {
   position: relative;
   width: 35rem;
   height: 1.5rem;
@@ -436,7 +448,7 @@ a, button {
   border-radius: 1rem;
   background-color: #fff;
 }
-#container #about .about-skills .skills-inner ul li p::after {
+#container #profile .profile-skills .skills-inner ul li p::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -447,68 +459,68 @@ a, button {
   background-color: #74a9ec;
   height: 1.5rem;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(n+3):nth-of-type(-n+8) img {
   border-radius: 1rem;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(1) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(1) p::after {
   animation: photoShopGage 1.6s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(2) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(2) p::after {
   animation: AiGage 1.6s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(3) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(3) p::after {
   animation: HtmlGage 2.5s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(4) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(4) p::after {
   animation: CssGage 2s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(5) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(5) p::after {
   animation: ScssGage 1.7s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(6) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(6) p::after {
   animation: JsGage 1s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(7) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(7) p::after {
   animation: FigmaGage 1.6s forwards;
 }
-#container #about .about-skills .skills-inner ul li:nth-of-type(8) p::after {
+#container #profile .profile-skills .skills-inner ul li:nth-of-type(8) p::after {
   animation: GithubGage 1.6s forwards;
 }
-#container #about .about-skills .skills-inner .skills-right {
+#container #profile .profile-skills .skills-inner .skills-right {
   display: flex;
 }
-#container #about .about-skills .skills-inner .skills-right .motions {
+#container #profile .profile-skills .skills-inner .skills-right .motions {
   display: flex;
   flex-direction: column;
   margin: 0 1rem 0 0;
 }
-#container #about .about-skills .skills-inner .skills-right .motions button {
+#container #profile .profile-skills .skills-inner .skills-right .motions button {
   width: 5rem;
   height: 5rem;
   margin: 0 0 1rem 0;
   border-radius: 1rem;
 }
-#container #about .about-skills .skills-inner .skills-right .motions button:nth-of-type(1) {
+#container #profile .profile-skills .skills-inner .skills-right .motions button:nth-of-type(1) {
   background: url(../img/normal.png) center center no-repeat;
   background-size: contain;
 }
-#container #about .about-skills .skills-inner .skills-right .motions button:nth-of-type(2) {
+#container #profile .profile-skills .skills-inner .skills-right .motions button:nth-of-type(2) {
   background: url(../img/Dash.png) center center no-repeat;
   background-size: contain;
 }
-#container #about .about-skills .skills-inner .skills-right .motions button:nth-of-type(3) {
+#container #profile .profile-skills .skills-inner .skills-right .motions button:nth-of-type(3) {
   background: url(../img/Dance.png) center center no-repeat;
   background-size: contain;
 }
-#container #about .about-skills .skills-inner .skills-right .motions button:hover {
+#container #profile .profile-skills .skills-inner .skills-right .motions button:hover {
   box-shadow: 0 0 0 0.2rem #74a9ec;
 }
-#container #about .about-skills .skills-inner .skills-right dl {
+#container #profile .profile-skills .skills-inner .skills-right dl {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#container #about .about-skills .skills-inner .skills-right dl .changeMotion-normal {
+#container #profile .profile-skills .skills-inner .skills-right dl .changeMotion-normal {
   width: 25rem;
   height: 35rem;
   background: url(../img/이모지-normal.gif) center center no-repeat;
@@ -516,7 +528,7 @@ a, button {
   border-radius: 20px;
   transition: background 0.1s ease-in;
 }
-#container #about .about-skills .skills-inner .skills-right dl .changeMotion-dash {
+#container #profile .profile-skills .skills-inner .skills-right dl .changeMotion-dash {
   width: 25rem;
   height: 35rem;
   background: url(../img/이모지-dash.gif) center center no-repeat;
@@ -524,7 +536,7 @@ a, button {
   border-radius: 20px;
   transition: background 0.1s ease-in;
 }
-#container #about .about-skills .skills-inner .skills-right dl .changeMotion-dance {
+#container #profile .profile-skills .skills-inner .skills-right dl .changeMotion-dance {
   width: 25rem;
   height: 35rem;
   background: url(../img/이모지-dance.gif) center center no-repeat;
@@ -532,7 +544,7 @@ a, button {
   border-radius: 20px;
   transition: background 0.1s ease-in;
 }
-#container #about .about-skills .skills-inner .skills-right dl dd {
+#container #profile .profile-skills .skills-inner .skills-right dl dd {
   width: 100%;
   padding: 0.5rem 0;
   margin: 0.5rem 0 0 0;
@@ -542,7 +554,7 @@ a, button {
   font-size: 1.6rem;
   background-color: #fff;
 }
-#container #about .about-skills .skillsClose {
+#container #profile .profile-skills .skillsClose {
   display: block;
   position: absolute;
   right: 2rem;
@@ -557,7 +569,7 @@ a, button {
   font-style: italic;
   font-weight: 500;
 }
-#container #about .about-skills .skillsClose:hover {
+#container #profile .profile-skills .skillsClose:hover {
   color: #74a9ec;
   background-color: #e2edff;
 }

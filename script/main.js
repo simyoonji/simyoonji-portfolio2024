@@ -54,7 +54,7 @@ menuList.forEach((menu) => {
 });
 
 // 스크롤 이벤트 -> 헤더의 글씨 변화
-const sectionAbout = document.getElementById('about');
+const sectionProfile = document.getElementById('profile');
 const sectionProject = document.getElementById('project');
 const sectionContact = document.getElementById('contact');
 const sectionLast = document.getElementById('section');
@@ -62,15 +62,15 @@ let headerTextChange = document.querySelector('.header-text-change');
 
 window.addEventListener('scroll', () => {
     const windowYOffset = window.pageYOffset;
-    const sectionAboutHalf = sectionAbout.offsetTop + sectionAbout.offsetHeight / 2;
+    const sectionProfileHalf = sectionProfile.offsetTop + sectionProfile.offsetHeight / 2;
     const sectionProjectHalf = sectionProject.offsetTop + sectionProject.offsetHeight / 2;
     const sectionContactHalf = sectionContact.offsetTop + sectionContact.offsetHeight / 2;
     const sectionLastHalf = sectionLast.offsetTop + sectionLast.offsetHeight / 2;
 
-    if (windowYOffset < sectionAboutHalf) {
+    if (windowYOffset < sectionProfileHalf) {
         headerTextChange.textContent = "MENU";
     } else if (windowYOffset < sectionProjectHalf) {
-        headerTextChange.textContent = "ABOUT";
+        headerTextChange.textContent = "Profile";
     } else if (windowYOffset < sectionContactHalf) {
         headerTextChange.textContent = "PROJECT";
     } else if (windowYOffset < sectionLastHalf) {
@@ -81,8 +81,8 @@ window.addEventListener('scroll', () => {
 });
 
 // 클릭 이벤트 -> skills 열기
-const skillsBox = sectionAbout.querySelector('.about-skills');
-const modalBg = sectionAbout.querySelector('.about-modal-bg');
+const skillsBox = sectionProfile.querySelector('.profile-skills');
+const modalBg = sectionProfile.querySelector('.profile-modal-bg');
 
 skillsOpen.addEventListener('click', () => {
             modalBg.style.display = 'block';
